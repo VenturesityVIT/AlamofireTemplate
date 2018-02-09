@@ -14,6 +14,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
+    //MARK:IBOutlets
     @IBOutlet weak var first: UILabel!
     @IBOutlet weak var second: UILabel!
     @IBOutlet weak var third: UILabel!
@@ -23,7 +24,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var thirdTextField: UITextField!
     
     
+    
+    //MARK:Constants
      let finalURLString = "https://jsonplaceholder.typicode.com/posts"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +37,8 @@ class ViewController: UIViewController {
         
     }
 
+    
+    
     //MARK: Networking Methods
    func getFunction(url:String){
     Alamofire.request(url, method: .get).responseJSON { (response) in
@@ -46,6 +53,8 @@ class ViewController: UIViewController {
         }
     }
     }
+    
+    
     func postFunction(parameters:[String:String],url:String){
         Alamofire.request(url, method: .post, parameters: parameters ).responseJSON { (response) in
             if response.result.isFailure{
@@ -73,6 +82,10 @@ class ViewController: UIViewController {
         fourth.text = data["body"].stringValue
     }
     
+    
+    
+    
+    //MARK: IBActions
     @IBAction func buttonAction(_ sender: UIButton) {
         
         let param :[String:String] = ["title":firstTextField.text!,"userId":secondTextField.text!,"body":thirdTextField.text!]
