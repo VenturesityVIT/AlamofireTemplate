@@ -10,10 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-struct network {
-    let url :String = "https://jsonplaceholder.typicode.com/"
-    let form = "posts"
-};
+
 
 class ViewController: UIViewController {
     
@@ -21,12 +18,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var second: UILabel!
     @IBOutlet weak var third: UILabel!
     @IBOutlet weak var fourth: UILabel!
-
-    let net = network()
+    @IBOutlet weak var firstTextField: UITextField!
+    @IBOutlet weak var secondTextField: UITextField!
+    @IBOutlet weak var thirdTextField: UITextField!
+    
+    
+     let finalURLString = "https://jsonplaceholder.typicode.com/posts"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let finalURLString = net.url + net.form
+       
         getFunction(url: finalURLString)
         
     }
@@ -45,6 +46,17 @@ class ViewController: UIViewController {
         }
     }
     }
+    func postFunction(parameters:[String:String],url:String){
+        Alamofire.request(url, method: .post, parameters: parameters ).responseJSON { (response) in
+            if response.result.isFailure{
+                print(response.error!)
+            }else if response.result.isSuccess{
+                let jsonData2 = JSON(response.value!)
+                print(jsonData2)
+                self.postData(data: jsonData2)
+            }
+        }
+    }
 
     //MARK: Update label using JSON Data
     func updateLabels(data:JSON){
@@ -53,5 +65,20 @@ class ViewController: UIViewController {
         third.text = data[0]["id"].stringValue
         fourth.text = data[0]["body"].stringValue
     }
+    
+    func postData(data:JSON){
+        first.text = data["title"].stringValue
+        second.text = data["userId"].stringValue
+        third.text = data["id"].stringValue
+        fourth.text = data["body"].stringValue
+    }
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+        
+        let param :[String:String] = ["title":firstTextField.text!,"userId":secondTextField.text!,"body":thirdTextField.text!]
+        postFunction(parameters: param, url: finalURLString)
+        
+    }
+    
 }
 
