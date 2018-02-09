@@ -12,6 +12,7 @@
 		40D7905B202DC74100DE590C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D79059202DC74100DE590C /* Main.storyboard */; };
 		40D7905D202DC74100DE590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D7905C202DC74100DE590C /* Assets.xcassets */; };
 		40D79060202DC74100DE590C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D7905E202DC74100DE590C /* LaunchScreen.storyboard */; };
+		40D7906A202DD80E00DE590C /* pict in Resources */ = {isa = PBXBuildFile; fileRef = 40D79069202DD80E00DE590C /* pict */; };
 		902D33FE6F994F94B170C038 /* Pods_AlamofireTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1E8CEDBB2ABB79205C3347 /* Pods_AlamofireTemplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		40D7905C202DC74100DE590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40D7905F202DC74100DE590C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40D79061202DC74100DE590C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40D79069202DD80E00DE590C /* pict */ = {isa = PBXFileReference; lastKnownFileType = folder; path = pict; sourceTree = "<group>"; };
 		EE34040395F32E199F329E88 /* Pods-AlamofireTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireTemplate/Pods-AlamofireTemplate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				40D7905C202DC74100DE590C /* Assets.xcassets */,
 				40D7905E202DC74100DE590C /* LaunchScreen.storyboard */,
 				40D79061202DC74100DE590C /* Info.plist */,
+				40D79069202DD80E00DE590C /* pict */,
 			);
 			path = AlamofireTemplate;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D7906A202DD80E00DE590C /* pict in Resources */,
 				40D79060202DC74100DE590C /* LaunchScreen.storyboard in Resources */,
 				40D7905D202DC74100DE590C /* Assets.xcassets in Resources */,
 				40D7905B202DC74100DE590C /* Main.storyboard in Resources */,
